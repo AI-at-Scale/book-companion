@@ -1,0 +1,9 @@
+# Core Data & ML Libraries
+numpy>=1.24.0
+torch>=2.0.0
+
+# Information Retrieval / LLM Agents
+dspy-ai>=2.4.0
+
+# Data Processing
+datatrove>=0.2.0
