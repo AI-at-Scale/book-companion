@@ -1,0 +1,59 @@
+= Scaling Experiment Report: [Experiment Name]
+:author: [Your Name]
+:date: {localdate}
+:toc: macro
+
+[abstract]
+== Executive Summary
+A brief overview of the experiment objectives, the model configuration tested, and the primary result (e.g., "Achieved Chinchilla-optimality at 1.2T tokens").
+
+toc::[]
+
+== 1. Hardware Profile
+[options="header"]
+|=======================================================================
+| Component | Specification | Notes
+| **GPU Type** | e.g., H100 (80GB) | 
+| **Cluster Size** | e.g., 64 Nodes (512 GPUs) | 
+| **Interconnect** | e.g., InfiniBand NDR | 
+| **Available VRAM** | e.g., 40,960 GB | Aggregate across cluster.
+|=======================================================================
+
+== 2. Model Topology
+* **Parameter Count (N):** [e.g., 70B]
+* **Hidden Dimension:** [e.g., 8192]
+* **Number of Layers:** [e.g., 80]
+* **Parallelism Strategy:** [e.g., TP=8, PP=4, DP=16]
+
+== 3. Scaling Law Prediction vs. Actual
+[quote]
+____
+Apply the Chinchilla Law: $D \approx 20N$.
+____
+
+[options="header"]
+|=======================================================================
+| Metric | Predicted (Theoretical) | Actual (Observed)
+| **Loss at Convergence** | | 
+| **Tokens Processed (D)** | | 
+| **Total TFLOPS** | | 
+|=======================================================================
+
+== 4. Bottleneck Analysis
+Analyze where the scaling wall was hit.
+
+* **[ ] Compute-Bound:** Performance limited by TFLOPS.
+* **[ ] Memory-Bound:** Performance limited by HBM bandwidth or capacity (OOM).
+* **[ ] IO-Bound:** Performance limited by data ingestion from storage.
+* **[ ] Communication-Bound:** Performance limited by cross-node latency/bandwidth.
+
+== 5. Key Takeaways
+1. [What surprised you?]
+2. [What would you change in the next run?]
+3. [Was the $B_{crit}$ respected?]
+
+== Appendix: Raw Logs
+[source,bash]
+----
+# Paste your training log snippet here
+----

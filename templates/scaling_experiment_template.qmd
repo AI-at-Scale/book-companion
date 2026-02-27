@@ -1,0 +1,72 @@
+---
+title: "Scaling Experiment Report: [Name]"
+author: "[Your Name]"
+date: last-modified
+format:
+  html:
+    toc: true
+    code-fold: true
+  pdf:
+    toc: true
+    number-sections: true
+---
+
+## Executive Summary
+
+A brief overview of the experiment objectives, the model configuration tested, and the primary result.
+
+## 1. Hardware Profile
+
+| Component | Specification |
+|-----------|---------------|
+| **GPU Type** | |
+| **Cluster Size** | |
+| **Interconnect** | |
+| **Aggregate VRAM** | |
+
+## 2. Model Topology
+
+- **Parameter Count (N):**
+- **Precision:** (e.g., BF16, FP8)
+- **Parallelism Strategy:** (e.g., 3D Parallelism Config)
+
+## 3. Scaling Law Prediction vs. Actual
+
+```{python}
+#| label: scaling-calc
+# Quick check of Chinchilla Optimality
+N = 70e9 # Parameters
+D = 1.4e12 # Tokens
+ratio = D / N
+print(f"Token-to-Parameter Ratio: {ratio:.2f}")
+```
+
+## 4. Bottleneck Analysis
+
+Describe any bottlenecks encountered (Compute, Memory, IO, or Communication). Use the roofline model intuition if available.
+
+## 5. Visualizations
+
+```{python}
+#| label: loss-curve
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Placeholder for convergence data
+steps = np.arange(0, 1000, 10)
+loss = 5 * np.exp(-steps/200) + 1
+
+plt.figure(figsize=(10, 6))
+plt.plot(steps, loss, label="Training Loss")
+plt.title("Scaling Convergence Curve")
+plt.xlabel("Steps")
+plt.ylabel("Cross-Entropy Loss")
+plt.grid(True)
+plt.show()
+```
+
+## 6. Key Takeaways
+
+1. 
+2. 
+3. 
